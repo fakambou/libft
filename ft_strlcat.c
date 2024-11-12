@@ -6,7 +6,7 @@
 /*   By: fakambou <fakambou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:22:45 by fakambou          #+#    #+#             */
-/*   Updated: 2024/11/09 19:10:07 by fakambou         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:52:54 by fakambou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	len_src;
 	size_t	i;
 
+	i = 0;
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);
 	if (size <= len_dest)
@@ -26,3 +27,11 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest[len_dest++] = src[i++];
 	return (ft_strlen(src + i) + len_dest);
 }
+// int main(void)
+// {
+// 	char dest[] = "iheb";
+// 	char src[] = "fares";
+
+// 	printf("%zu", ft_strlcat(dest, src, 50));
+// 	return 0;
+// }

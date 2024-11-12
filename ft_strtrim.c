@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fakambou <fakambou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 14:36:33 by fakambou          #+#    #+#             */
-/*   Updated: 2024/11/11 20:52:33 by fakambou         ###   ########.fr       */
+/*   Created: 2024/11/12 16:07:38 by fakambou          #+#    #+#             */
+/*   Updated: 2024/11/12 20:02:56 by fakambou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*res;
+	char	*trim;
 	int		i;
 	int		j;
 
-	res = (char *)malloc(sizeof (char) * (strlen(s1) + strlen(s2) + 1));
-	i = 0;
-	j = 0;
-	if (res == NULL)
+	if (!s1)
 		return (NULL);
-	while (s1[i])
-	{
-		res[i] = s1[i];
+	if (!set)
+		return (ft_strdup (s1));
+	i = 0;
+	j = ft_strlen(s1) - 1;
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	}
-	while (s2[j])
+	if (s1[i])
 	{
-		res[i++] = s2[j++];
+		while(s1[j] && ft_strchr(set, s1[j]))
+			j--;
 	}
-	res[i] = '\0';
-	return (res);
+	// trim = malloc(sizeof(char) * (j - i + 2));
+	trim = ft_substr(s1, i, j - i + 1);
+	return (trim);
 }
 // int main(void)
 // {
-// 	 char s1 [] = "fares ";
-// 	 char s2 [] = "le marocain";
-// 	 char *res  = ft_strjoin(s1, s2);
-// 	 printf("%s", res);
-// 	 free (res);
+// 	char s1 [] = "  ***far*es***   ";
+// 	char set [] = "* ";
+// 	char *res = ft_strtrim(s1, set);
+// 	printf("%s", ft_strtrim(s1, set));
+// 	free (res);
 // }

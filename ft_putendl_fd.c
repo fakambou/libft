@@ -6,7 +6,7 @@
 /*   By: fakambou <fakambou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:57:32 by fakambou          #+#    #+#             */
-/*   Updated: 2024/11/10 14:20:45 by fakambou         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:48:31 by fakambou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (*s++)
+	if (s != NULL)
 	{
-		ft_putstr_fd(*s, fd);
+		ft_putstr_fd(s, fd);
 		ft_putchar_fd('\n', fd);
 	}
 }
 // int main(void)
 // {
 // 	char s [] = "fares";
-// 	ft_putendl_fd(s, 1);
+// 	ft_putendl_fd(s, -1);
 // }

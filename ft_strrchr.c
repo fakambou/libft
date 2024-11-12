@@ -6,7 +6,7 @@
 /*   By: fakambou <fakambou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:45:45 by fakambou          #+#    #+#             */
-/*   Updated: 2024/11/09 19:10:39 by fakambou         ###   ########.fr       */
+/*   Updated: 2024/11/10 19:38:22 by fakambou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	long int	i;
 
-	i = ft_strlen((char *)s) - 1;
-	while (s[i])
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
 		if (s[i] == (char )c)
 			return ((char *)s + i);
@@ -30,4 +30,9 @@ char	*ft_strrchr(const char *s, int c)
 // 	char s [] = "mahdi haut niveau";
 // 	char c = 'h';
 // 	printf("%s",ft_strrchr(s,c));
+// }
+
+// int		main()
+// {
+// 	printf("%s", ft_strchr("salut", 'h'));
 // }
