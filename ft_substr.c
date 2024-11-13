@@ -6,7 +6,7 @@
 /*   By: fakambou <fakambou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:30:59 by fakambou          #+#    #+#             */
-/*   Updated: 2024/11/12 20:18:45 by fakambou         ###   ########.fr       */
+/*   Updated: 2024/11/12 21:45:58 by fakambou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*res;
 	size_t	s_len;
 	size_t	i;
-	
+
 	i = 0;
 	if (!s)
 		return (NULL);

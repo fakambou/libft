@@ -6,7 +6,7 @@
 /*   By: fakambou <fakambou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:07:38 by fakambou          #+#    #+#             */
-/*   Updated: 2024/11/12 20:02:56 by fakambou         ###   ########.fr       */
+/*   Updated: 2024/11/12 21:46:24 by fakambou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 	if (s1[i])
 	{
-		while(s1[j] && ft_strchr(set, s1[j]))
+		while (s1[j] && ft_strchr(set, s1[j]))
 			j--;
 	}
-	// trim = malloc(sizeof(char) * (j - i + 2));
 	trim = ft_substr(s1, i, j - i + 1);
 	return (trim);
 }
