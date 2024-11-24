@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fakambou <fakambou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 16:22:59 by fakambou          #+#    #+#             */
-/*   Updated: 2024/11/19 16:11:14 by fakambou         ###   ########.fr       */
+/*   Created: 2024/11/16 18:10:39 by fakambou          #+#    #+#             */
+/*   Updated: 2024/11/16 20:53:02 by fakambou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*new;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < (n - 1))
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	new = malloc(sizeof(*new));
+	if (!new)
+		return (NULL);
+	new -> content = content;
+	new -> next = NULL;
+	return (new);
 }
+// int main(void)
+// {
+// 	char *str = "nouvelle notion";
+// 	t_list *node = ft_lstnew(str);
+
+// 	if(node)
+// 		printf("%s",(char *)node -> content);
+// 	free(node);
+// }

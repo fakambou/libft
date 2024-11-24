@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fakambou <fakambou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 16:22:59 by fakambou          #+#    #+#             */
-/*   Updated: 2024/11/19 16:11:14 by fakambou         ###   ########.fr       */
+/*   Created: 2024/11/17 16:25:31 by fakambou          #+#    #+#             */
+/*   Updated: 2024/11/19 16:19:14 by fakambou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < (n - 1))
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	while (lst && lst -> next)
+	{
+		lst = lst -> next;
+	}
+	return (lst);
 }
+// int main()
+// {
+// 	t_list *node1 = ft_lstnew("node1");
+// 	node1 -> next = NULL;
+// 	printf("dernier element de la liste : %s", (char *)ft_lstlast(node1));
+// 	free (node1);
+// }
